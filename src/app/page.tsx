@@ -120,26 +120,15 @@ function HeroParticles() {
   return (
     <div className="absolute inset-0 pointer-events-none z-0">
       {/* Pink dot */}
-      <div className="absolute top-10 left-20 w-8 h-8 bg-pink-400 rounded-full opacity-90 animate-float-slow transform -translate-y-0" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.1px))' }} />
+      <div className="absolute top-10 left-20 w-8 h-8 bg-pink-400 rounded-full opacity-40 animate-float-slow transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.1px))' }} />
       {/* Blue dot */}
-      <div className="absolute top-32 left-1/2 w-6 h-6 bg-blue-400 rounded-full opacity-80 animate-float-medium transform -translate-y-0" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.15px))' }} />
+      <div className="absolute top-32 left-1/2 w-6 h-6 bg-blue-400 rounded-full opacity-35 animate-float-medium transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.15px))' }} />
       {/* Yellow dot */}
-      <div className="absolute bottom-16 left-1/3 w-5 h-5 bg-yellow-300 rounded-full opacity-90 animate-float-fast transform -translate-y-0" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.2px))' }} />
+      <div className="absolute bottom-16 left-1/3 w-5 h-5 bg-yellow-300 rounded-full opacity-40 animate-float-fast transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.2px))' }} />
       {/* Purple dot */}
-      <div className="absolute bottom-24 right-24 w-7 h-7 bg-purple-400 rounded-full opacity-80 animate-float-medium transform -translate-y-0" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.12px))' }} />
+      <div className="absolute bottom-24 right-24 w-7 h-7 bg-purple-400 rounded-full opacity-35 animate-float-medium transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.12px))' }} />
       {/* Green dot */}
-      <div className="absolute top-1/4 right-1/4 w-6 h-6 bg-green-400 rounded-full opacity-80 animate-float-slow transform -translate-y-0" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.08px))' }} />
-      {/* More dots for density */}
-      <div className="absolute top-1/3 left-1/4 w-4 h-4 bg-pink-300 rounded-full opacity-80 animate-float-fast transform -translate-y-0" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.25px))' }} />
-      <div className="absolute top-1/2 left-1/5 w-5 h-5 bg-blue-300 rounded-full opacity-70 animate-float-medium transform -translate-y-0" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.18px))' }} />
-      <div className="absolute bottom-10 left-1/2 w-6 h-6 bg-yellow-400 rounded-full opacity-80 animate-float-slow transform -translate-y-0" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.13px))' }} />
-      <div className="absolute top-12 right-1/3 w-4 h-4 bg-green-300 rounded-full opacity-80 animate-float-fast transform -translate-y-0" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.22px))' }} />
-      <div className="absolute bottom-1/4 right-1/5 w-7 h-7 bg-purple-300 rounded-full opacity-70 animate-float-medium transform -translate-y-0" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.16px))' }} />
-      <div className="absolute top-1/5 right-10 w-3 h-3 bg-pink-200 rounded-full opacity-60 animate-float-fast transform -translate-y-0" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.3px))' }} />
-      <div className="absolute bottom-1/3 left-1/6 w-4 h-4 bg-blue-200 rounded-full opacity-60 animate-float-slow transform -translate-y-0" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.11px))' }} />
-      <div className="absolute top-1/6 left-1/2 w-4 h-4 bg-yellow-200 rounded-full opacity-60 animate-float-medium transform -translate-y-0" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.19px))' }} />
-      <div className="absolute bottom-1/6 right-1/2 w-4 h-4 bg-green-200 rounded-full opacity-60 animate-float-fast transform -translate-y-0" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.27px))' }} />
-      <div className="absolute top-1/2 right-1/4 w-6 h-6 bg-purple-200 rounded-full opacity-60 animate-float-slow transform -translate-y-0" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.14px))' }} />
+      <div className="absolute top-1/4 right-1/4 w-6 h-6 bg-green-400 rounded-full opacity-30 animate-float-slow transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.08px))' }} />
     </div>
   );
 }

@@ -20,6 +20,18 @@ A modern, responsive NFT marketplace built with Next.js 15, React 19, and Tailwi
 ![ArtifyNFT Collections](./screenshots/collections.png)
 *Curated collections showcasing premium digital artworks from talented creators*
 
+### Browse Categories
+![ArtifyNFT Browse Categories](./screenshots/browse-categories.png)
+*Explore NFT categories including Art, Music, and Utility with stunning visual previews*
+
+### FAQs Section
+![ArtifyNFT FAQs](./screenshots/faqs.png)
+*Comprehensive FAQ section helping users understand NFT marketplace operations*
+
+### Blog & Footer
+![ArtifyNFT Blog & Footer](./screenshots/blog-footer.png)
+*Latest blog posts and comprehensive footer with social links and navigation*
+
 ## 🚀 Features
 
 ### Core Functionality
@@ -106,7 +118,10 @@ artifynft/
 │   ├── homepage.png          # Main landing page
 │   ├── categories.png        # NFT categories section
 │   ├── artists.png           # Top artists showcase
-│   └── collections.png       # Featured collections
+│   ├── collections.png       # Featured collections
+│   ├── browse-categories.png # Category browsing section
+│   ├── faqs.png             # FAQ section
+│   └── blog-footer.png      # Blog posts and footer
 ├── public/                   # Static assets
 ├── package.json             # Dependencies and scripts
 ├── next.config.ts           # Next.js configuration
@@ -143,6 +158,27 @@ artifynft/
 - High-quality image presentation
 - Category-based organization
 - *See: Collections screenshot above*
+
+### Browse Categories
+- Three main categories: Art, Music, and Utility
+- Large visual previews with category labels
+- Responsive grid layout
+- Easy navigation between different NFT types
+- *See: Browse Categories screenshot above*
+
+### FAQ Section
+- Comprehensive Q&A covering common NFT questions
+- Clean card-based layout
+- Categorized information for easy reference
+- Helpful for new users and collectors
+- *See: FAQs screenshot above*
+
+### Blog & Footer
+- Latest blog posts with featured images
+- Social media integration
+- Comprehensive footer navigation
+- Contact information and legal links
+- *See: Blog & Footer screenshot above*
 
 ### Interactive Elements
 - Hover effects on cards and buttons
