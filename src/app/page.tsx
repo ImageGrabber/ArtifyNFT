@@ -79,6 +79,7 @@ const trendingNfts = [
     timer: true
   },
   // New row
+  
   {
     image: "https://images.stockcake.com/public/8/6/7/8676188a-511a-41eb-a41f-46ca5f3b1da7_large/visionary-economic-future-stockcake.jpg",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg",
@@ -144,46 +145,50 @@ function HeroParticles() {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1a1333] via-[#21123a] to-[#18122b] text-white">
+    <div className="min-h-screen bg-gradient-to-br from-[#1a1333] via-[#21123a] to-[#18122b] text-white relative">
+      {/* Global Particles Background */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <HeroParticles />
+      </div>
+      
       {/* Navbar */}
-      <nav className="flex items-center justify-between px-10 py-6 max-w-7xl mx-auto">
+      <nav className="flex items-center justify-between px-10 py-6 max-w-7xl mx-auto relative z-10">
         <div className="flex items-center gap-1 text-2xl font-extrabold select-none lowercase">
           <span className="text-white">artifynft</span>
         </div>
         <ul className="hidden md:flex gap-10 text-base font-semibold">
           <li className="text-[#a259ff] border-b-2 border-[#a259ff] pb-1">Home</li>
-          <li className="hover:text-[#a259ff] transition">Features</li>
-          <li className="hover:text-[#a259ff] transition">AI Made</li>
-          <li className="hover:text-[#a259ff] transition">Testimonials</li>
+          <li className="hover:text-[#a259ff] transition">Marketplace</li>
+          <li className="hover:text-[#a259ff] transition">Create</li>
+          <li className="hover:text-[#a259ff] transition">About</li>
         </ul>
         <button className="flex items-center gap-2 bg-[#a259ff] hover:bg-[#7c3aed] text-white font-semibold px-6 py-2 rounded-full shadow transition">
           <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path fill="currentColor" d="M10 2a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4A1 1 0 1 1 6.707 9.293L9 11.586V3a1 1 0 0 1 1-1Z"/><path fill="currentColor" d="M4 15a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1Z"/></svg>
-          Download
+          Connect Wallet
         </button>
       </nav>
 
       {/* Hero Card Section */}
-      <section className="flex justify-center items-center min-h-[80vh] px-4 relative overflow-hidden">
-        <HeroParticles />
+      <section className="flex justify-center items-center min-h-[80vh] px-4 relative overflow-hidden z-10">
         <div className="w-full max-w-7xl rounded-3xl bg-gradient-to-br from-[#1a1333cc] via-[#21123acc] to-[#18122bcc] shadow-2xl p-0 md:p-0 flex flex-col md:flex-row overflow-hidden relative">
           {/* Left: Text */}
           <div className="flex-1 flex flex-col justify-center px-8 py-16 md:py-24 md:pl-16">
             {/* Badge */}
             <span className="inline-flex items-center gap-2 bg-[#2d1e4a] text-[#a259ff] px-5 py-2 rounded-full text-base font-semibold mb-8 w-fit">
-              <span className="text-lg">●</span> Collect NFTs
+              <span className="text-lg">●</span> MEET YOUR CO-PILOT
             </span>
             {/* Gradient Headline */}
             <h1 className="text-5xl md:text-6xl font-extrabold mb-2 leading-tight">
-              <span className="bg-gradient-to-r from-[#a259ff] via-[#b16cea] to-[#ff6250] bg-clip-text text-transparent">Discover & Collect</span>
-              <span className="block text-white"> The <span className="font-black">Best NFTs Digital Art</span></span>
+              <span className="bg-gradient-to-r from-[#a259ff] via-[#b16cea] to-[#ff6250] bg-clip-text text-transparent">Discover, Create & Trade</span>
+              <span className="block text-white"> The <span className="font-black">Best Digital Art NFTs</span></span>
             </h1>
             {/* Description */}
-            <p className="text-xl text-gray-200 mb-10 max-w-2xl">We are a huge marketplace dedicated to connecting great artists of all NFT with their fans and unique token collectors!</p>
+            <p className="text-xl text-gray-200 mb-10 max-w-2xl">The premier NFT marketplace for artists and collectors. Mint, buy, and sell unique digital artworks on the blockchain.</p>
             {/* Buttons */}
             <div className="flex gap-6">
-              <button className="bg-[#a259ff] hover:bg-[#7c3aed] text-white font-semibold px-8 py-3 rounded-xl text-lg shadow transition">Explore Now</button>
+              <button className="bg-[#a259ff] hover:bg-[#7c3aed] text-white font-semibold px-8 py-3 rounded-xl text-lg shadow transition">Explore NFTs</button>
               <button className="border border-white/30 text-white font-semibold px-8 py-3 rounded-xl text-lg flex items-center gap-2 hover:bg-white/10 transition">
-                Sell Now <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M5 10h10m0 0-4-4m4 4-4 4"/></svg>
+                Create NFT <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M5 10h10m0 0-4-4m4 4-4 4"/></svg>
               </button>
             </div>
           </div>
@@ -228,11 +233,11 @@ export default function Home() {
       </section>
 
       {/* Trending Categories Section */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 py-20">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 py-20 relative z-10">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Trending Categories</h2>
-            <p className="text-gray-300 text-base md:text-lg max-w-2xl">Start working with Tailwindcss! It allows you to compose complex designs by combining and customizing utility classes..</p>
+            <p className="text-gray-300 text-base md:text-lg max-w-2xl">Discover unique digital artworks across various categories. From digital art to collectibles, find the perfect NFT for your collection.</p>
           </div>
           <button className="flex items-center gap-2 border border-white/20 text-white px-6 py-2 rounded-xl hover:bg-white/10 transition text-base font-semibold">
             See More <svg width="18" height="18" fill="none" viewBox="0 0 20 20"><path stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M5 10h10m0 0-4-4m4 4-4 4"/></svg>
@@ -274,11 +279,11 @@ export default function Home() {
       </section>
 
       {/* Top Sellers Section */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 py-20">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 py-20 relative z-10">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Top Sellers</h2>
-            <p className="text-gray-300 text-base md:text-lg max-w-2xl">Start working with Tailwindcss! It allows you to compose complex designs by combining and customizing utility classes..</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Top Artists</h2>
+            <p className="text-gray-300 text-base md:text-lg max-w-2xl">Meet the most successful artists and creators on our platform. Discover their unique styles and collections.</p>
           </div>
           <button className="flex items-center gap-2 border border-white/20 text-white px-6 py-2 rounded-xl hover:bg-white/10 transition text-base font-semibold">View All</button>
         </div>
@@ -296,7 +301,6 @@ export default function Home() {
                 <div className="text-white font-bold text-lg">Nikom Petroy</div>
                 <div className="text-gray-300 text-sm">Total earnings: $60000</div>
               </div>
-              <button className="border border-white/20 text-white px-5 py-2 rounded-xl hover:bg-white/10 transition text-base font-semibold">View Detail</button>
               <div className="text-3xl font-bold text-white/30 ml-4">01</div>
             </div>
           </div>
@@ -313,7 +317,6 @@ export default function Home() {
                 <div className="text-white font-bold text-lg">Mexi Luna</div>
                 <div className="text-gray-300 text-sm">Total earnings: $55000</div>
               </div>
-              <button className="border border-white/20 text-white px-5 py-2 rounded-xl hover:bg-white/10 transition text-base font-semibold">View Detail</button>
               <div className="text-3xl font-bold text-white/30 ml-4">02</div>
             </div>
           </div>
@@ -331,7 +334,6 @@ export default function Home() {
                 <div className="text-white font-bold text-lg">Astro Stark</div>
                 <div className="text-gray-300 text-sm">Total earnings: $52000</div>
               </div>
-              <button className="border border-white/20 text-white px-5 py-2 rounded-xl hover:bg-white/10 transition text-base font-semibold">View Detail</button>
               <div className="text-3xl font-bold text-white/30 ml-4">03</div>
             </div>
           </div>
@@ -348,7 +350,6 @@ export default function Home() {
                 <div className="text-white font-bold text-lg">Aliza Spencer</div>
                 <div className="text-gray-300 text-sm">Total earnings: $48500</div>
               </div>
-              <button className="border border-white/20 text-white px-5 py-2 rounded-xl hover:bg-white/10 transition text-base font-semibold">View Detail</button>
               <div className="text-3xl font-bold text-white/30 ml-4">04</div>
             </div>
           </div>
@@ -365,7 +366,6 @@ export default function Home() {
                 <div className="text-white font-bold text-lg">Tony Stark</div>
                 <div className="text-gray-300 text-sm">Total earnings: $45200</div>
               </div>
-              <button className="border border-white/20 text-white px-5 py-2 rounded-xl hover:bg-white/10 transition text-base font-semibold">View Detail</button>
               <div className="text-3xl font-bold text-white/30 ml-4">05</div>
             </div>
           </div>
@@ -382,7 +382,6 @@ export default function Home() {
                 <div className="text-white font-bold text-lg">Minato Namikaze</div>
                 <div className="text-gray-300 text-sm">Total earnings: $45100</div>
               </div>
-              <button className="border border-white/20 text-white px-5 py-2 rounded-xl hover:bg-white/10 transition text-base font-semibold">View Detail</button>
               <div className="text-3xl font-bold text-white/30 ml-4">06</div>
             </div>
           </div>
@@ -390,11 +389,11 @@ export default function Home() {
       </section>
 
       {/* The Best Showcase Section */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 py-20">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 py-20 relative z-10">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">The Best Showcase</h2>
-            <p className="text-gray-300 text-base md:text-lg max-w-2xl">Start working with Tailwindcss! It allows you to compose complex designs by combining and customizing utility classes..</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Featured Collections</h2>
+            <p className="text-gray-300 text-base md:text-lg max-w-2xl">Explore curated collections of the finest digital artworks from talented artists around the world.</p>
           </div>
           <button className="flex items-center gap-2 border border-white/20 text-white px-6 py-2 rounded-xl hover:bg-white/10 transition text-base font-semibold">See More <svg width='18' height='18' fill='none' viewBox='0 0 20 20'><path stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' d='M5 10h10m0 0-4-4m4 4-4 4'/></svg></button>
         </div>
@@ -411,7 +410,7 @@ export default function Home() {
       </section>
 
       {/* How It Works / Setup Steps Section */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 py-20">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 py-20 relative z-10">
         <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch">
           {/* Set up your wallet */}
           <div className="flex-1 bg-[#231942] rounded-2xl p-10 flex flex-col items-center justify-center relative">
@@ -439,11 +438,11 @@ export default function Home() {
       </section>
 
       {/* Browse By Categories Section */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 py-20">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 py-20 relative z-10">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Browse By Categories</h2>
-            <p className="text-gray-300 text-base md:text-lg max-w-2xl">Start working with Tailwindcss! It allows you to compose complex designs by combining and customizing utility classes..</p>
+            <p className="text-gray-300 text-base md:text-lg max-w-2xl">Find your perfect NFT across our diverse categories. From digital art to music, there's something for every collector.</p>
           </div>
           <button className="flex items-center gap-2 border border-white/20 text-white px-6 py-2 rounded-xl hover:bg-white/10 transition text-base font-semibold">See All <svg width='18' height='18' fill='none' viewBox='0 0 20 20'><path stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' d='M5 10h10m0 0-4-4m4 4-4 4'/></svg></button>
         </div>
@@ -491,6 +490,150 @@ export default function Home() {
         .animate-float-medium { animation: floatMedium 5s ease-in-out infinite; }
         .animate-float-fast { animation: floatFast 3.5s ease-in-out infinite; }
       `}</style>
+
+      {/* FAQs Section */}
+      <section className="max-w-7xl mx-auto px-4 md:px-8 py-20 relative z-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-2 text-center">Frequently Asked Questions</h2>
+        <p className="text-gray-300 text-base md:text-lg max-w-2xl mx-auto mb-10 text-center">Learn how ArtifyNFT works and how to get the most out of the NFT marketplace.</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* FAQ 1 */}
+          <div className="bg-[#231942] rounded-xl p-6">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-white bg-[#2d1e4a] rounded-full p-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="#a259ff" strokeWidth="2"/><text x="7" y="15" fontSize="12" fill="#a259ff">?</text></svg></span>
+              <span className="text-lg font-semibold text-white">What cryptocurrencies are supported?</span>
+            </div>
+            <div className="text-gray-300 text-sm">We support Ethereum (ETH) for all NFT transactions. You can connect your MetaMask or other Web3 wallets to make purchases.</div>
+          </div>
+          {/* FAQ 2 */}
+          <div className="bg-[#231942] rounded-xl p-6">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-white bg-[#2d1e4a] rounded-full p-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="#a259ff" strokeWidth="2"/><text x="7" y="15" fontSize="12" fill="#a259ff">?</text></svg></span>
+              <span className="text-lg font-semibold text-white">How do I create my first NFT?</span>
+            </div>
+            <div className="text-gray-300 text-sm">Upload your digital artwork, add metadata, and mint it as an NFT using our simple interface. Gas fees apply for blockchain transactions.</div>
+          </div>
+          {/* FAQ 3 */}
+          <div className="bg-[#231942] rounded-xl p-6">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-white bg-[#2d1e4a] rounded-full p-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="#a259ff" strokeWidth="2"/><text x="7" y="15" fontSize="12" fill="#a259ff">?</text></svg></span>
+              <span className="text-lg font-semibold text-white">What are the marketplace fees?</span>
+            </div>
+          </div>
+          {/* FAQ 4 */}
+          <div className="bg-[#231942] rounded-xl p-6">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-white bg-[#2d1e4a] rounded-full p-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="#a259ff" strokeWidth="2"/><text x="7" y="15" fontSize="12" fill="#a259ff">?</text></svg></span>
+              <span className="text-lg font-semibold text-white">How do I verify NFT authenticity?</span>
+            </div>
+          </div>
+          {/* FAQ 5 */}
+          <div className="bg-[#231942] rounded-xl p-6">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-white bg-[#2d1e4a] rounded-full p-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="#a259ff" strokeWidth="2"/><text x="7" y="15" fontSize="12" fill="#a259ff">?</text></svg></span>
+              <span className="text-lg font-semibold text-white">Can I resell my NFTs?</span>
+            </div>
+          </div>
+          {/* FAQ 6 */}
+          <div className="bg-[#231942] rounded-xl p-6">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-white bg-[#2d1e4a] rounded-full p-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="#a259ff" strokeWidth="2"/><text x="7" y="15" fontSize="12" fill="#a259ff">?</text></svg></span>
+              <span className="text-lg font-semibold text-white">What file types are supported?</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Resources Blog & News Section */}
+      <section className="max-w-7xl mx-auto px-4 md:px-8 py-20 relative z-10">
+        <div className="flex items-center justify-between mb-8">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Resources Blog & News</h2>
+            <p className="text-gray-300 text-base md:text-lg max-w-2xl">Stay updated with the latest NFT trends, artist spotlights, and marketplace insights from the ArtifyNFT community.</p>
+          </div>
+          <button className="flex items-center gap-2 border border-white/20 text-white px-6 py-2 rounded-xl hover:bg-white/10 transition text-base font-semibold">See All <svg width='18' height='18' fill='none' viewBox='0 0 20 20'><path stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' d='M5 10h10m0 0-4-4m4 4-4 4'/></svg></button>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Blog 1 */}
+          <div className="relative bg-[#231942] rounded-2xl overflow-hidden shadow-lg">
+            <img src="https://images.stockcake.com/public/2/4/4/244f6fdd-ec03-4203-9b7e-43772fdbcde7_large/magical-forest-fox-stockcake.jpg" className="w-full h-72 object-cover opacity-80" />
+            <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black/80 via-black/30 to-transparent">
+              <div className="text-gray-200 text-sm mb-2">27 Aug 2021</div>
+              <div className="text-2xl font-bold text-white mb-2">The Beginner's to creating & selling digital NFTs</div>
+              <div className="text-gray-200 mb-4">suscipit eget imperdiet nec imperdiet iaculis ipsum. Sed aliquam ultrices mauris.</div>
+              <a href="#" className="text-white font-semibold flex items-center gap-2 hover:underline">Read More <svg width='16' height='16' fill='none' viewBox='0 0 20 20'><path stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' d='M5 10h10m0 0-4-4m4 4-4 4'/></svg></a>
+            </div>
+          </div>
+          {/* Blog 2 */}
+          <div className="relative bg-[#231942] rounded-2xl overflow-hidden shadow-lg">
+            <img src="https://images.stockcake.com/public/3/f/5/3f5980fa-9d91-4ce1-9cdc-416f1038faf6_large/peaceful-reading-nook-stockcake.jpg" className="w-full h-72 object-cover opacity-80" />
+            <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black/80 via-black/30 to-transparent">
+              <div className="text-gray-200 text-sm mb-2">31 Jan 2022</div>
+              <div className="text-2xl font-bold text-white mb-2">7 Reasons to sell your NFTs on openSea</div>
+              <div className="text-gray-200 mb-4">Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero.</div>
+              <a href="#" className="text-white font-semibold flex items-center gap-2 hover:underline">Read More <svg width='16' height='16' fill='none' viewBox='0 0 20 20'><path stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' d='M5 10h10m0 0-4-4m4 4-4 4'/></svg></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer Section */}
+      <footer className="max-w-full bg-transparent py-20 px-4 md:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between gap-12 md:gap-0">
+          {/* Logo and description */}
+          <div className="flex-1 flex flex-col items-start mb-8 md:mb-0">
+            <div className="flex items-center gap-1 text-3xl font-extrabold select-none mb-4">
+              <span className="text-white">Artify</span><span className="text-[#a259ff]">NFT</span>
+            </div>
+            <p className="text-gray-300 mb-4 max-w-xs">The premier NFT marketplace for artists and collectors. Create, discover, and trade unique digital artworks on the blockchain.</p>
+            <div className="mb-2 text-white font-semibold">Follow Us :</div>
+            <div className="flex gap-3">
+              <a href="#" className="bg-[#231942] p-2 rounded-lg text-white hover:bg-[#a259ff] transition"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2v-3h3a2 2 0 0 0 2-2V7a5 5 0 0 0-5-5Z" stroke="currentColor" strokeWidth="2"/></svg></a>
+              <a href="#" className="bg-[#231942] p-2 rounded-lg text-white hover:bg-[#a259ff] transition"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.4.36a9.09 9.09 0 0 1-2.88 1.1A4.52 4.52 0 0 0 16.5 0c-2.5 0-4.5 2.01-4.5 4.5 0 .35.04.7.11 1.03C7.69 5.36 4.07 3.57 1.64.96c-.38.65-.6 1.4-.6 2.2 0 1.52.77 2.86 1.94 3.64A4.48 4.48 0 0 1 .96 6v.06c0 2.13 1.52 3.91 3.54 4.31-.37.1-.76.16-1.16.16-.28 0-.55-.03-.81-.08.56 1.74 2.18 3.01 4.1 3.05A9.05 9.05 0 0 1 0 19.54a12.8 12.8 0 0 0 6.92 2.03c8.3 0 12.85-6.88 12.85-12.85 0-.2 0-.39-.01-.58A9.22 9.22 0 0 0 24 4.59a9.1 9.1 0 0 1-2.6.71A4.48 4.48 0 0 0 23 3Z" stroke="currentColor" strokeWidth="2"/></svg></a>
+              <a href="#" className="bg-[#231942] p-2 rounded-lg text-white hover:bg-[#a259ff] transition"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M16 8a6 6 0 1 1-12 0 6 6 0 0 1 12 0ZM2 22v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2" stroke="currentColor" strokeWidth="2"/></svg></a>
+              <a href="#" className="bg-[#231942] p-2 rounded-lg text-white hover:bg-[#a259ff] transition"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M16 8a6 6 0 1 1-12 0 6 6 0 0 1 12 0ZM2 22v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2" stroke="currentColor" strokeWidth="2"/></svg></a>
+            </div>
+          </div>
+          {/* Footer Links */}
+          <div className="flex-[2] grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+              <div className="text-white font-semibold mb-3">Marketplace</div>
+              <ul className="text-gray-300 space-y-2">
+                <li>All NFTs</li>
+                <li>New</li>
+                <li>Arts</li>
+              </ul>
+            </div>
+            <div>
+              <div className="text-white font-semibold mb-3">Status</div>
+              <ul className="text-gray-300 space-y-2">
+                <li>Rankings</li>
+                <li>Activity</li>
+              </ul>
+            </div>
+            <div>
+              <div className="text-white font-semibold mb-3">Resources</div>
+              <ul className="text-gray-300 space-y-2">
+                <li>Help Center</li>
+                <li>Suggestions</li>
+                <li>Newsletter</li>
+              </ul>
+            </div>
+            <div>
+              <div className="text-white font-semibold mb-3">Company</div>
+              <ul className="text-gray-300 space-y-2">
+                <li>About</li>
+                <li>Careers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="mt-12 flex flex-col md:flex-row items-center justify-between text-gray-400 text-sm border-t border-white/10 pt-8">
+          <div>2025 © ArtifyNFT </div>
+          <div className="flex gap-6 mt-4 md:mt-0">
+            <a href="#" className="hover:underline">Terms Conditions & Policy</a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
