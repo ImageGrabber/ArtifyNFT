@@ -80,7 +80,7 @@ const trendingNfts = [
     timer: true
   },
   // New row
-  
+
   {
     image: "https://images.stockcake.com/public/8/6/7/8676188a-511a-41eb-a41f-46ca5f3b1da7_large/visionary-economic-future-stockcake.jpg",
     avatar: "https://randomuser.me/api/portraits/men/32.jpg",
@@ -116,114 +116,110 @@ const trendingNfts = [
 ];
 
 // Parallax floating particles for background
-function HeroParticles() {
-  return (
-    <div className="absolute inset-0 pointer-events-none z-0">
-      {/* Pink dot */}
-      <div className="absolute top-10 left-20 w-8 h-8 bg-pink-400 rounded-full opacity-40 animate-float-slow transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.1px))' }} />
-      {/* Blue dot */}
-      <div className="absolute top-32 left-1/2 w-6 h-6 bg-blue-400 rounded-full opacity-35 animate-float-medium transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.15px))' }} />
-      {/* Yellow dot */}
-      <div className="absolute bottom-16 left-1/3 w-5 h-5 bg-yellow-300 rounded-full opacity-40 animate-float-fast transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.2px))' }} />
-      {/* Purple dot */}
-      <div className="absolute bottom-24 right-24 w-7 h-7 bg-purple-400 rounded-full opacity-35 animate-float-medium transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.12px))' }} />
-      {/* Green dot */}
-      <div className="absolute top-1/4 right-1/4 w-6 h-6 bg-green-400 rounded-full opacity-30 animate-float-slow transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.08px))' }} />
-    </div>
-  );
-}
+
 
 export default function Home() {
-  // Add scroll tracking for parallax effect
-  React.useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      document.documentElement.style.setProperty('--scroll-y', scrollY.toString());
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1a1333] via-[#21123a] to-[#18122b] text-white relative">
-      {/* Global Particles Background */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <HeroParticles />
-      </div>
-      
-      {/* Navbar */}
-      <nav className="flex items-center justify-between px-10 py-6 max-w-7xl mx-auto relative z-10">
-        <div className="flex items-center gap-1 text-2xl font-extrabold select-none lowercase">
-          <span className="text-white">artifynft</span>
-        </div>
-        <ul className="hidden md:flex gap-10 text-base font-semibold">
-          <li className="text-[#a259ff] border-b-2 border-[#a259ff] pb-1">Home</li>
-          <li className="hover:text-[#a259ff] transition">Marketplace</li>
-          <li className="hover:text-[#a259ff] transition">Create</li>
-          <li className="hover:text-[#a259ff] transition">About</li>
-        </ul>
-        <button className="flex items-center gap-2 bg-[#a259ff] hover:bg-[#7c3aed] text-white font-semibold px-6 py-2 rounded-full shadow transition">
-          <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path fill="currentColor" d="M10 2a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4A1 1 0 1 1 6.707 9.293L9 11.586V3a1 1 0 0 1 1-1Z"/><path fill="currentColor" d="M4 15a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1Z"/></svg>
-          Connect Wallet
-        </button>
-      </nav>
+    <>
+
 
       {/* Hero Card Section */}
-      <section className="flex justify-center items-center min-h-[80vh] px-4 relative overflow-hidden z-10">
-        <div className="w-full max-w-7xl rounded-3xl bg-gradient-to-br from-[#1a1333cc] via-[#21123acc] to-[#18122bcc] shadow-2xl p-0 md:p-0 flex flex-col md:flex-row overflow-hidden relative">
+      <section className="flex justify-center items-center min-h-[85vh] px-4 relative overflow-hidden z-10 py-10">
+        {/* Background glow for hero */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#a259ff] rounded-full mix-blend-screen filter blur-[120px] opacity-20 pointer-events-none"></div>
+
+        <div className="w-full max-w-[1300px] rounded-[2.5rem] bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl p-0 md:p-0 flex flex-col md:flex-row overflow-hidden relative group">
+
+          {/* Decorative shine effect */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
           {/* Left: Text */}
-          <div className="flex-1 flex flex-col justify-center px-8 py-16 md:py-24 md:pl-16">
+          <div className="flex-[1.2] flex flex-col justify-center px-8 py-16 md:py-20 md:pl-20 relative z-10">
             {/* Badge */}
-            <span className="inline-flex items-center gap-2 bg-[#2d1e4a] text-[#a259ff] px-5 py-2 rounded-full text-base font-semibold mb-8 w-fit">
-              <span className="text-lg">●</span> MEET YOUR CO-PILOT
-            </span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#a259ff]/30 bg-[#a259ff]/10 backdrop-blur-md w-fit mb-8 animate-fade-in-up">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a259ff] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#a259ff]"></span>
+              </span>
+              <span className="text-[#a259ff] font-bold text-sm tracking-wider uppercase">Future of Digital Art</span>
+            </div>
+
             {/* Gradient Headline */}
-            <h1 className="text-5xl md:text-6xl font-extrabold mb-2 leading-tight">
-              <span className="bg-gradient-to-r from-[#a259ff] via-[#b16cea] to-[#ff6250] bg-clip-text text-transparent">Discover, Create & Trade</span>
-              <span className="block text-white"> The <span className="font-black">Best Digital Art NFTs</span></span>
+            <h1 className="text-4xl md:text-6xl font-black mb-6 leading-[1.1] tracking-tight">
+              <span className="block text-white mb-2">Discover, Collect</span>
+              <span className="bg-gradient-to-r from-[#a259ff] via-[#d4bbfc] to-[#7c3aed] bg-clip-text text-transparent drop-shadow-lg">
+                & Sell Extraoridinary
+              </span>
+              <span className="block text-white">NFTs</span>
             </h1>
+
             {/* Description */}
-            <p className="text-xl text-gray-200 mb-10 max-w-2xl">The premier NFT marketplace for artists and collectors. Mint, buy, and sell unique digital artworks on the blockchain.</p>
+            <p className="text-xl text-gray-300 mb-10 max-w-xl leading-relaxed font-light">
+              The world's first and largest digital marketplace for crypto collectibles and non-fungible tokens (NFTs). Join the revolution.
+            </p>
+
             {/* Buttons */}
-            <div className="flex gap-6">
-              <button className="bg-[#a259ff] hover:bg-[#7c3aed] text-white font-semibold px-8 py-3 rounded-xl text-lg shadow transition">Explore NFTs</button>
-              <button className="border border-white/30 text-white font-semibold px-8 py-3 rounded-xl text-lg flex items-center gap-2 hover:bg-white/10 transition">
-                Create NFT <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M5 10h10m0 0-4-4m4 4-4 4"/></svg>
+            <div className="flex flex-wrap gap-6">
+              <button className="group relative bg-[#a259ff] hover:bg-[#8b3dff] text-white font-bold px-10 py-4 rounded-2xl text-lg shadow-[0_10px_30px_rgba(162,89,255,0.4)] transition-all transform hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(162,89,255,0.6)] overflow-hidden">
+                <span className="relative z-10">Explore Collection</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shine"></div>
+              </button>
+
+              <button className="group relative px-10 py-4 rounded-2xl hover:rounded-3xl text-lg font-bold text-white overflow-hidden transition-all duration-300 transform hover:-translate-y-1">
+                <span className="absolute inset-0 border-2 border-white/20 rounded-2xl group-hover:rounded-3xl group-hover:border-white/50 transition-all duration-300"></span>
+                <span className="absolute inset-0 bg-white/5 rounded-2xl group-hover:rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm"></span>
+                <span className="relative z-10 flex items-center gap-2">
+                  Create NFT
+                  <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </span>
               </button>
             </div>
+
+            {/* Stats */}
+            <div className="flex gap-12 mt-14 border-t border-white/10 pt-8">
+              <div>
+                <p className="text-3xl font-bold text-white">98k+</p>
+                <p className="text-gray-400 text-sm">Artwork</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-white">12k+</p>
+                <p className="text-gray-400 text-sm">Auction</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-white">15k+</p>
+                <p className="text-gray-400 text-sm">Artist</p>
+              </div>
+            </div>
           </div>
+
           {/* Right: Image Grid with slider effect */}
-          <div className="flex-1 flex items-center justify-center p-8">
-            <div className="grid grid-cols-2 gap-6 w-[440px] h-[600px] relative">
+          <div className="flex-1 flex items-center justify-center p-8 relative">
+            {/* Gradient Masks for Slider */}
+            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#1a1333cc] to-transparent z-20 pointer-events-none md:from-transparent"></div> {/* Adjusted for card bg match if needed, but transparent works inside glass */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#1a1333cc] to-transparent z-20 pointer-events-none md:from-transparent"></div> {/* Actually glass card doesn't need opaque mask, let's do fade mask */}
+
+            <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#21123a] to-transparent z-20 opacity-0 md:opacity-0 mix-blend-overlay"></div> {/* subtle overlay */}
+
+            <div className="absolute inset-0 z-20 pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(33,18,58,0.8) 0%, transparent 15%, transparent 85%, rgba(33,18,58,0.8) 100%)' }}></div>
+
+
+            <div className="grid grid-cols-2 gap-5 w-[85%] md:w-[480px] h-[650px] relative transform rotate-[-5deg] md:rotate-0 transition-transform hover:rotate-0 duration-500">
               {/* Left column: slides up */}
-              <div className="flex flex-col gap-4 overflow-hidden h-full">
-                <div className="animate-slide-up" style={{ animation: 'slideUp 6s linear infinite' }}>
-                  {leftImagesForSlider.map((img, i) => (
-                    <div key={i} className="rounded-2xl overflow-hidden bg-[#231942] shadow-lg flex items-center justify-center mb-6 last:mb-0">
-                      <Image src={img.src} alt={img.alt} width={260} height={200} className="object-cover w-full h-full" />
-                    </div>
-                  ))}
-                  {/* Repeat for seamless loop */}
-                  {leftImagesForSlider.map((img, i) => (
-                    <div key={"repeat-"+i} className="rounded-2xl overflow-hidden bg-[#231942] shadow-lg flex items-center justify-center mb-6 last:mb-0">
-                      <Image src={img.src} alt={img.alt} width={260} height={200} className="object-cover w-full h-full" />
+              <div className="flex flex-col gap-5 overflow-hidden h-full">
+                <div className="animate-slide-up" style={{ animation: 'slideUp 20s linear infinite' }}>
+                  {[...leftImagesForSlider, ...leftImagesForSlider, ...leftImagesForSlider].map((img, i) => (
+                    <div key={i} className="rounded-2xl overflow-hidden shadow-2xl transition-transform hover:scale-105 mb-5 h-[280px]">
+                      <Image src={img.src} alt={img.alt} width={300} height={400} className="object-cover w-full h-full" />
                     </div>
                   ))}
                 </div>
               </div>
               {/* Right column: slides down */}
-              <div className="flex flex-col gap-4 overflow-hidden h-full">
-                <div className="animate-slide-down" style={{ animation: 'slideDown 6s linear infinite' }}>
-                  {rightImagesForSlider.map((img, i) => (
-                    <div key={i} className="rounded-2xl overflow-hidden bg-[#231942] shadow-lg flex items-center justify-center mb-6 last:mb-0">
-                      <Image src={img.src} alt={img.alt} width={260} height={200} className="object-cover w-full h-full" />
-                    </div>
-                  ))}
-                  {/* Repeat for seamless loop */}
-                  {rightImagesForSlider.map((img, i) => (
-                    <div key={"repeat-"+i} className="rounded-2xl overflow-hidden bg-[#231942] shadow-lg flex items-center justify-center mb-6 last:mb-0">
-                      <Image src={img.src} alt={img.alt} width={260} height={200} className="object-cover w-full h-full" />
+              <div className="flex flex-col gap-5 overflow-hidden h-full">
+                <div className="animate-slide-down" style={{ animation: 'slideDown 20s linear infinite' }}>
+                  {[...rightImagesForSlider, ...rightImagesForSlider, ...rightImagesForSlider].map((img, i) => (
+                    <div key={i} className="rounded-2xl overflow-hidden shadow-2xl transition-transform hover:scale-105 mb-5 h-[280px]">
+                      <Image src={img.src} alt={img.alt} width={300} height={400} className="object-cover w-full h-full" />
                     </div>
                   ))}
                 </div>
@@ -241,42 +237,42 @@ export default function Home() {
             <p className="text-gray-300 text-base md:text-lg max-w-2xl">Discover unique digital artworks across various categories. From digital art to collectibles, find the perfect NFT for your collection.</p>
           </div>
           <button className="flex items-center gap-2 border border-white/20 text-white px-6 py-2 rounded-xl hover:bg-white/10 transition text-base font-semibold">
-            See More <svg width="18" height="18" fill="none" viewBox="0 0 20 20"><path stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M5 10h10m0 0-4-4m4 4-4 4"/></svg>
+            See More <svg width="18" height="18" fill="none" viewBox="0 0 20 20"><path stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M5 10h10m0 0-4-4m4 4-4 4" /></svg>
           </button>
         </div>
-         {/* NFT Cards Grid */}
-         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-           {trendingNfts.map((nft, i) => (
-             <div key={i} className="bg-[#231942] rounded-2xl p-4 shadow-lg">
-               <div className="relative mb-4">
-                 <img src={nft.image} alt={nft.name} className="rounded-xl w-full h-56 object-cover" />
-                 {nft.timer && (
-                   <span className="absolute top-3 left-3 bg-gradient-to-r from-pink-500 to-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">3 : 23 : 54 : 57</span>
-                 )}
-               </div>
-               <div className="flex items-center gap-3 mb-2">
-                 <img src={nft.avatar} alt={nft.user} className="w-8 h-8 rounded-full border-2 border-white" />
-                 <div>
-                   <div className="text-white font-semibold text-sm">{nft.user}</div>
-                   <div className="text-gray-400 text-xs">{nft.name}</div>
-                 </div>
-                 <div className="ml-auto text-white/60">
-                   <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M10 18l-1.45-1.32C4.4 12.36 2 10.28 2 7.5 2 5.5 3.5 4 5.5 4c1.54 0 3.04.99 3.57 2.36h1.87C11.46 4.99 12.96 4 14.5 4 16.5 4 18 5.5 18 7.5c0 2.78-2.4 4.86-6.55 9.18L10 18z" fill="currentColor"/></svg>
-                 </div>
-               </div>
-               <div className="flex justify-between items-center mt-2">
-                 <div>
-                   <div className="text-xs text-gray-400">Current Bid</div>
-                   <div className="text-purple-400 font-bold flex items-center gap-1"> <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 0L13.9282 3.5V10.5L7 14L0.0717969 10.5V3.5L7 0Z" fill="#a259ff"/></svg> {nft.currentBid}</div>
-                 </div>
-                 <div>
-                   <div className="text-xs text-gray-400">Last Bid</div>
-                   <div className="text-purple-300 font-bold flex items-center gap-1"> <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 0L13.9282 3.5V10.5L7 14L0.0717969 10.5V3.5L7 0Z" fill="#a259ff"/></svg> {nft.lastBid}</div>
-                 </div>
-               </div>
-             </div>
-           ))}
-         </div>
+        {/* NFT Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {trendingNfts.map((nft, i) => (
+            <div key={i} className="bg-[#231942] rounded-2xl p-4 shadow-lg">
+              <div className="relative mb-4">
+                <img src={nft.image} alt={nft.name} className="rounded-xl w-full h-56 object-cover" />
+                {nft.timer && (
+                  <span className="absolute top-3 left-3 bg-gradient-to-r from-pink-500 to-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">3 : 23 : 54 : 57</span>
+                )}
+              </div>
+              <div className="flex items-center gap-3 mb-2">
+                <img src={nft.avatar} alt={nft.user} className="w-8 h-8 rounded-full border-2 border-white" />
+                <div>
+                  <div className="text-white font-semibold text-sm">{nft.user}</div>
+                  <div className="text-gray-400 text-xs">{nft.name}</div>
+                </div>
+                <div className="ml-auto text-white/60">
+                  <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M10 18l-1.45-1.32C4.4 12.36 2 10.28 2 7.5 2 5.5 3.5 4 5.5 4c1.54 0 3.04.99 3.57 2.36h1.87C11.46 4.99 12.96 4 14.5 4 16.5 4 18 5.5 18 7.5c0 2.78-2.4 4.86-6.55 9.18L10 18z" fill="currentColor" /></svg>
+                </div>
+              </div>
+              <div className="flex justify-between items-center mt-2">
+                <div>
+                  <div className="text-xs text-gray-400">Current Bid</div>
+                  <div className="text-purple-400 font-bold flex items-center gap-1"> <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 0L13.9282 3.5V10.5L7 14L0.0717969 10.5V3.5L7 0Z" fill="#a259ff" /></svg> {nft.currentBid}</div>
+                </div>
+                <div>
+                  <div className="text-xs text-gray-400">Last Bid</div>
+                  <div className="text-purple-300 font-bold flex items-center gap-1"> <svg width="14" height="14" fill="none" viewBox="0 0 14 14"><path d="M7 0L13.9282 3.5V10.5L7 14L0.0717969 10.5V3.5L7 0Z" fill="#a259ff" /></svg> {nft.lastBid}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* Top Sellers Section */}
@@ -396,7 +392,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Featured Collections</h2>
             <p className="text-gray-300 text-base md:text-lg max-w-2xl">Explore curated collections of the finest digital artworks from talented artists around the world.</p>
           </div>
-          <button className="flex items-center gap-2 border border-white/20 text-white px-6 py-2 rounded-xl hover:bg-white/10 transition text-base font-semibold">See More <svg width='18' height='18' fill='none' viewBox='0 0 20 20'><path stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' d='M5 10h10m0 0-4-4m4 4-4 4'/></svg></button>
+          <button className="flex items-center gap-2 border border-white/20 text-white px-6 py-2 rounded-xl hover:bg-white/10 transition text-base font-semibold">See More <svg width='18' height='18' fill='none' viewBox='0 0 20 20'><path stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' d='M5 10h10m0 0-4-4m4 4-4 4' /></svg></button>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           <img src="https://images.stockcake.com/public/8/6/7/8676188a-511a-41eb-a41f-46ca5f3b1da7_large/visionary-economic-future-stockcake.jpg" className="rounded-xl w-full h-56 object-cover" />
@@ -417,7 +413,7 @@ export default function Home() {
           <div className="flex-1 bg-[#231942] rounded-2xl p-10 flex flex-col items-center justify-center relative">
             <div className="flex justify-center w-full">
               <div className="bg-[#a259ff] rounded-xl p-4 mb-6 flex items-center justify-center">
-                <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" stroke="#fff" strokeWidth="2"/><path d="M16 11.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" stroke="#fff" strokeWidth="2"/></svg>
+                <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" stroke="#fff" strokeWidth="2" /><path d="M16 11.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" stroke="#fff" strokeWidth="2" /></svg>
               </div>
             </div>
             <h3 className="text-white text-2xl font-bold mb-2">Set up your wallet</h3>
@@ -428,7 +424,7 @@ export default function Home() {
           <div className="flex-1 bg-gradient-to-br from-[#a259ff] to-[#7c3aed] rounded-2xl p-10 flex flex-col items-center justify-center relative">
             <div className="flex justify-center w-full">
               <div className="bg-white/20 rounded-xl p-4 mb-6 flex items-center justify-center">
-                <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4" fill="#fff" fillOpacity=".15"/><path d="M12 8v8M8 12h8" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>
+                <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4" fill="#fff" fillOpacity=".15" /><path d="M12 8v8M8 12h8" stroke="#fff" strokeWidth="2" strokeLinecap="round" /></svg>
               </div>
             </div>
             <h3 className="text-white text-2xl font-bold mb-2">Create your collection</h3>
@@ -445,7 +441,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Browse By Categories</h2>
             <p className="text-gray-300 text-base md:text-lg max-w-2xl">Find your perfect NFT across our diverse categories. From digital art to music, there's something for every collector.</p>
           </div>
-          <button className="flex items-center gap-2 border border-white/20 text-white px-6 py-2 rounded-xl hover:bg-white/10 transition text-base font-semibold">See All <svg width='18' height='18' fill='none' viewBox='0 0 20 20'><path stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' d='M5 10h10m0 0-4-4m4 4-4 4'/></svg></button>
+          <button className="flex items-center gap-2 border border-white/20 text-white px-6 py-2 rounded-xl hover:bg-white/10 transition text-base font-semibold">See All <svg width='18' height='18' fill='none' viewBox='0 0 20 20'><path stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' d='M5 10h10m0 0-4-4m4 4-4 4' /></svg></button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Art Category */}
@@ -466,31 +462,7 @@ export default function Home() {
         </div>
       </section>
       {/* Custom slider keyframes */}
-      <style>{`
-        @keyframes slideUp {
-          0% { transform: translateY(0); }
-          100% { transform: translateY(-50%); }
-        }
-        @keyframes slideDown {
-          0% { transform: translateY(-50%); }
-          100% { transform: translateY(0); }
-        }
-        @keyframes floatSlow {
-          0%, 100% { transform: translateY(0) scale(1); }
-          50% { transform: translateY(-16px) scale(1.1); }
-        }
-        @keyframes floatMedium {
-          0%, 100% { transform: translateY(0) scale(1); }
-          50% { transform: translateY(12px) scale(0.95); }
-        }
-        @keyframes floatFast {
-          0%, 100% { transform: translateY(0) scale(1); }
-          50% { transform: translateY(-8px) scale(1.05); }
-        }
-        .animate-float-slow { animation: floatSlow 7s ease-in-out infinite; }
-        .animate-float-medium { animation: floatMedium 5s ease-in-out infinite; }
-        .animate-float-fast { animation: floatFast 3.5s ease-in-out infinite; }
-      `}</style>
+
 
       {/* FAQs Section */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-20 relative z-10">
@@ -500,7 +472,7 @@ export default function Home() {
           {/* FAQ 1 */}
           <div className="bg-[#231942] rounded-xl p-6">
             <div className="flex items-center gap-3 mb-2">
-              <span className="text-white bg-[#2d1e4a] rounded-full p-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="#a259ff" strokeWidth="2"/><text x="7" y="15" fontSize="12" fill="#a259ff">?</text></svg></span>
+              <span className="text-white bg-[#2d1e4a] rounded-full p-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="#a259ff" strokeWidth="2" /><text x="7" y="15" fontSize="12" fill="#a259ff">?</text></svg></span>
               <span className="text-lg font-semibold text-white">What cryptocurrencies are supported?</span>
             </div>
             <div className="text-gray-300 text-sm">We support Ethereum (ETH) for all NFT transactions. You can connect your MetaMask or other Web3 wallets to make purchases.</div>
@@ -508,7 +480,7 @@ export default function Home() {
           {/* FAQ 2 */}
           <div className="bg-[#231942] rounded-xl p-6">
             <div className="flex items-center gap-3 mb-2">
-              <span className="text-white bg-[#2d1e4a] rounded-full p-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="#a259ff" strokeWidth="2"/><text x="7" y="15" fontSize="12" fill="#a259ff">?</text></svg></span>
+              <span className="text-white bg-[#2d1e4a] rounded-full p-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="#a259ff" strokeWidth="2" /><text x="7" y="15" fontSize="12" fill="#a259ff">?</text></svg></span>
               <span className="text-lg font-semibold text-white">How do I create my first NFT?</span>
             </div>
             <div className="text-gray-300 text-sm">Upload your digital artwork, add metadata, and mint it as an NFT using our simple interface. Gas fees apply for blockchain transactions.</div>
@@ -516,28 +488,28 @@ export default function Home() {
           {/* FAQ 3 */}
           <div className="bg-[#231942] rounded-xl p-6">
             <div className="flex items-center gap-3 mb-2">
-              <span className="text-white bg-[#2d1e4a] rounded-full p-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="#a259ff" strokeWidth="2"/><text x="7" y="15" fontSize="12" fill="#a259ff">?</text></svg></span>
+              <span className="text-white bg-[#2d1e4a] rounded-full p-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="#a259ff" strokeWidth="2" /><text x="7" y="15" fontSize="12" fill="#a259ff">?</text></svg></span>
               <span className="text-lg font-semibold text-white">What are the marketplace fees?</span>
             </div>
           </div>
           {/* FAQ 4 */}
           <div className="bg-[#231942] rounded-xl p-6">
             <div className="flex items-center gap-3 mb-2">
-              <span className="text-white bg-[#2d1e4a] rounded-full p-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="#a259ff" strokeWidth="2"/><text x="7" y="15" fontSize="12" fill="#a259ff">?</text></svg></span>
+              <span className="text-white bg-[#2d1e4a] rounded-full p-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="#a259ff" strokeWidth="2" /><text x="7" y="15" fontSize="12" fill="#a259ff">?</text></svg></span>
               <span className="text-lg font-semibold text-white">How do I verify NFT authenticity?</span>
             </div>
           </div>
           {/* FAQ 5 */}
           <div className="bg-[#231942] rounded-xl p-6">
             <div className="flex items-center gap-3 mb-2">
-              <span className="text-white bg-[#2d1e4a] rounded-full p-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="#a259ff" strokeWidth="2"/><text x="7" y="15" fontSize="12" fill="#a259ff">?</text></svg></span>
+              <span className="text-white bg-[#2d1e4a] rounded-full p-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="#a259ff" strokeWidth="2" /><text x="7" y="15" fontSize="12" fill="#a259ff">?</text></svg></span>
               <span className="text-lg font-semibold text-white">Can I resell my NFTs?</span>
             </div>
           </div>
           {/* FAQ 6 */}
           <div className="bg-[#231942] rounded-xl p-6">
             <div className="flex items-center gap-3 mb-2">
-              <span className="text-white bg-[#2d1e4a] rounded-full p-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="#a259ff" strokeWidth="2"/><text x="7" y="15" fontSize="12" fill="#a259ff">?</text></svg></span>
+              <span className="text-white bg-[#2d1e4a] rounded-full p-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" stroke="#a259ff" strokeWidth="2" /><text x="7" y="15" fontSize="12" fill="#a259ff">?</text></svg></span>
               <span className="text-lg font-semibold text-white">What file types are supported?</span>
             </div>
           </div>
@@ -551,7 +523,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Resources Blog & News</h2>
             <p className="text-gray-300 text-base md:text-lg max-w-2xl">Stay updated with the latest NFT trends, artist spotlights, and marketplace insights from the ArtifyNFT community.</p>
           </div>
-          <button className="flex items-center gap-2 border border-white/20 text-white px-6 py-2 rounded-xl hover:bg-white/10 transition text-base font-semibold">See All <svg width='18' height='18' fill='none' viewBox='0 0 20 20'><path stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' d='M5 10h10m0 0-4-4m4 4-4 4'/></svg></button>
+          <button className="flex items-center gap-2 border border-white/20 text-white px-6 py-2 rounded-xl hover:bg-white/10 transition text-base font-semibold">See All <svg width='18' height='18' fill='none' viewBox='0 0 20 20'><path stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' d='M5 10h10m0 0-4-4m4 4-4 4' /></svg></button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Blog 1 */}
@@ -561,7 +533,7 @@ export default function Home() {
               <div className="text-gray-200 text-sm mb-2">27 Aug 2021</div>
               <div className="text-2xl font-bold text-white mb-2">The Beginner's to creating & selling digital NFTs</div>
               <div className="text-gray-200 mb-4">suscipit eget imperdiet nec imperdiet iaculis ipsum. Sed aliquam ultrices mauris.</div>
-              <a href="#" className="text-white font-semibold flex items-center gap-2 hover:underline">Read More <svg width='16' height='16' fill='none' viewBox='0 0 20 20'><path stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' d='M5 10h10m0 0-4-4m4 4-4 4'/></svg></a>
+              <a href="#" className="text-white font-semibold flex items-center gap-2 hover:underline">Read More <svg width='16' height='16' fill='none' viewBox='0 0 20 20'><path stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' d='M5 10h10m0 0-4-4m4 4-4 4' /></svg></a>
             </div>
           </div>
           {/* Blog 2 */}
@@ -571,70 +543,13 @@ export default function Home() {
               <div className="text-gray-200 text-sm mb-2">31 Jan 2022</div>
               <div className="text-2xl font-bold text-white mb-2">7 Reasons to sell your NFTs on openSea</div>
               <div className="text-gray-200 mb-4">Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero.</div>
-              <a href="#" className="text-white font-semibold flex items-center gap-2 hover:underline">Read More <svg width='16' height='16' fill='none' viewBox='0 0 20 20'><path stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' d='M5 10h10m0 0-4-4m4 4-4 4'/></svg></a>
+              <a href="#" className="text-white font-semibold flex items-center gap-2 hover:underline">Read More <svg width='16' height='16' fill='none' viewBox='0 0 20 20'><path stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' d='M5 10h10m0 0-4-4m4 4-4 4' /></svg></a>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer Section */}
-      <footer className="max-w-full bg-transparent py-20 px-4 md:px-8 relative z-10">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between gap-12 md:gap-0">
-          {/* Logo and description */}
-          <div className="flex-1 flex flex-col items-start mb-8 md:mb-0">
-            <div className="flex items-center gap-1 text-3xl font-extrabold select-none mb-4">
-              <span className="text-white">Artify</span><span className="text-[#a259ff]">NFT</span>
-            </div>
-            <p className="text-gray-300 mb-4 max-w-xs">The premier NFT marketplace for artists and collectors. Create, discover, and trade unique digital artworks on the blockchain.</p>
-            <div className="mb-2 text-white font-semibold">Follow Us :</div>
-            <div className="flex gap-3">
-              <a href="#" className="bg-[#231942] p-2 rounded-lg text-white hover:bg-[#a259ff] transition"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2v-3h3a2 2 0 0 0 2-2V7a5 5 0 0 0-5-5Z" stroke="currentColor" strokeWidth="2"/></svg></a>
-              <a href="#" className="bg-[#231942] p-2 rounded-lg text-white hover:bg-[#a259ff] transition"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.4.36a9.09 9.09 0 0 1-2.88 1.1A4.52 4.52 0 0 0 16.5 0c-2.5 0-4.5 2.01-4.5 4.5 0 .35.04.7.11 1.03C7.69 5.36 4.07 3.57 1.64.96c-.38.65-.6 1.4-.6 2.2 0 1.52.77 2.86 1.94 3.64A4.48 4.48 0 0 1 .96 6v.06c0 2.13 1.52 3.91 3.54 4.31-.37.1-.76.16-1.16.16-.28 0-.55-.03-.81-.08.56 1.74 2.18 3.01 4.1 3.05A9.05 9.05 0 0 1 0 19.54a12.8 12.8 0 0 0 6.92 2.03c8.3 0 12.85-6.88 12.85-12.85 0-.2 0-.39-.01-.58A9.22 9.22 0 0 0 24 4.59a9.1 9.1 0 0 1-2.6.71A4.48 4.48 0 0 0 23 3Z" stroke="currentColor" strokeWidth="2"/></svg></a>
-              <a href="#" className="bg-[#231942] p-2 rounded-lg text-white hover:bg-[#a259ff] transition"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M16 8a6 6 0 1 1-12 0 6 6 0 0 1 12 0ZM2 22v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2" stroke="currentColor" strokeWidth="2"/></svg></a>
-              <a href="#" className="bg-[#231942] p-2 rounded-lg text-white hover:bg-[#a259ff] transition"><svg width="18" height="18" fill="none" viewBox="0 0 24 24"><path d="M16 8a6 6 0 1 1-12 0 6 6 0 0 1 12 0ZM2 22v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2" stroke="currentColor" strokeWidth="2"/></svg></a>
-            </div>
-          </div>
-          {/* Footer Links */}
-          <div className="flex-[2] grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-white font-semibold mb-3">Marketplace</div>
-              <ul className="text-gray-300 space-y-2">
-                <li>All NFTs</li>
-                <li>New</li>
-                <li>Arts</li>
-              </ul>
-            </div>
-            <div>
-              <div className="text-white font-semibold mb-3">Status</div>
-              <ul className="text-gray-300 space-y-2">
-                <li>Rankings</li>
-                <li>Activity</li>
-              </ul>
-            </div>
-            <div>
-              <div className="text-white font-semibold mb-3">Resources</div>
-              <ul className="text-gray-300 space-y-2">
-                <li>Help Center</li>
-                <li>Suggestions</li>
-                <li>Newsletter</li>
-              </ul>
-            </div>
-            <div>
-              <div className="text-white font-semibold mb-3">Company</div>
-              <ul className="text-gray-300 space-y-2">
-                <li>About</li>
-                <li>Careers</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="mt-12 flex flex-col md:flex-row items-center justify-between text-gray-400 text-sm border-t border-white/10 pt-8">
-          <div>2025 © ArtifyNFT </div>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:underline">Terms Conditions & Policy</a>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }
