@@ -4,32 +4,32 @@ import React, { useEffect } from "react";
 
 // Parallax floating particles for background
 export default function HeroParticles() {
-    // Add scroll tracking for parallax effect
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollY = window.scrollY;
-            document.documentElement.style.setProperty('--scroll-y', scrollY.toString());
-        };
+  // Add scroll tracking for parallax effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      document.documentElement.style.setProperty('--scroll-y', scrollY.toString());
+    };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    return (
-        <div className="fixed inset-0 pointer-events-none z-0">
-            {/* Pink dot */}
-            <div className="absolute top-10 left-20 w-8 h-8 bg-pink-400 rounded-full opacity-40 animate-float-slow transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.1px))' }} />
-            {/* Blue dot */}
-            <div className="absolute top-32 left-1/2 w-6 h-6 bg-blue-400 rounded-full opacity-35 animate-float-medium transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.15px))' }} />
-            {/* Yellow dot */}
-            <div className="absolute bottom-16 left-1/3 w-5 h-5 bg-yellow-300 rounded-full opacity-40 animate-float-fast transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.2px))' }} />
-            {/* Purple dot */}
-            <div className="absolute bottom-24 right-24 w-7 h-7 bg-purple-400 rounded-full opacity-35 animate-float-medium transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.12px))' }} />
-            {/* Green dot */}
-            <div className="absolute top-1/4 right-1/4 w-6 h-6 bg-green-400 rounded-full opacity-30 animate-float-slow transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.08px))' }} />
+  return (
+    <div className="fixed inset-0 pointer-events-none z-0">
+      {/* Pink dot -> White dot */}
+      <div className="absolute top-10 left-20 w-8 h-8 bg-white rounded-full opacity-5 animate-float-slow transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.1px))' }} />
+      {/* Blue dot -> Gray dot */}
+      <div className="absolute top-32 left-1/2 w-6 h-6 bg-gray-400 rounded-full opacity-10 animate-float-medium transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.15px))' }} />
+      {/* Yellow dot -> White dot */}
+      <div className="absolute bottom-16 left-1/3 w-5 h-5 bg-white rounded-full opacity-5 animate-float-fast transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.2px))' }} />
+      {/* Purple dot -> Gray dot */}
+      <div className="absolute bottom-24 right-24 w-7 h-7 bg-gray-500 rounded-full opacity-10 animate-float-medium transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.12px))' }} />
+      {/* Green dot -> White dot */}
+      <div className="absolute top-1/4 right-1/4 w-6 h-6 bg-white rounded-full opacity-5 animate-float-slow transform -translate-y-0 blur-sm" style={{ transform: 'translateY(calc(var(--scroll-y, 0) * -0.08px))' }} />
 
-            {/* Custom Keyframes Style */}
-            <style jsx global>{`
+      {/* Custom Keyframes Style */}
+      <style jsx global>{`
         @keyframes slideUp {
           0% { transform: translateY(0); }
           100% { transform: translateY(-50%); }
@@ -62,6 +62,6 @@ export default function HeroParticles() {
             to { opacity: 1; transform: translateY(0); }
         }
       `}</style>
-        </div>
-    );
+    </div>
+  );
 }

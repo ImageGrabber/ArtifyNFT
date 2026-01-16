@@ -12,11 +12,9 @@ export default function CreatePage() {
         price: "",
     });
 
-    const [imageFile, setImageFile] = useState<File | null>(null);
     const [imagePreview, setImagePreview] = useState<string | null>(null);
 
     const handleImageSelect = (file: File | null) => {
-        setImageFile(file);
         if (file) {
             const reader = new FileReader();
             reader.onloadend = () => {
@@ -34,7 +32,7 @@ export default function CreatePage() {
     };
 
     return (
-        <div className="pt-24 pb-20 px-4 md:px-8 max-w-7xl mx-auto min-h-screen">
+        <div className="pt-40 md:pt-48 pb-20 px-4 md:px-8 max-w-7xl mx-auto min-h-screen">
 
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
 
@@ -66,11 +64,11 @@ export default function CreatePage() {
                         {/* External Link */}
                         <div>
                             <label className="block text-white font-bold mb-3 text-sm uppercase tracking-wide flex items-center gap-2">External Link <span className="text-gray-500 text-xs normal-case">(Optional)</span></label>
-                            <p className="text-gray-400 text-xs mb-3">ArtifyNFT will include a link to this URL on this item's detail page, so that users can click to learn more about it.</p>
+                            <p className="text-gray-400 text-xs mb-3">ArtifyNFT will include a link to this URL on this item&apos;s detail page, so that users can click to learn more about it.</p>
                             <input
                                 type="text"
                                 name="link"
-                                placeholder="https://yoursite.io/item/123"
+                                placeholder="https://example.com/item/123"
                                 value={formData.link}
                                 onChange={handleInputChange}
                                 className="w-full bg-[#1a1333] border border-white/20 rounded-xl py-4 px-5 text-white focus:outline-none focus:border-[#a259ff] focus:ring-1 focus:ring-[#a259ff] transition placeholder-gray-500"
@@ -80,7 +78,7 @@ export default function CreatePage() {
                         {/* Description */}
                         <div>
                             <label className="block text-white font-bold mb-3 text-sm uppercase tracking-wide">Description</label>
-                            <p className="text-gray-400 text-xs mb-3">The description will be included on the item's detail page underneath its image. Markdown syntax is supported.</p>
+                            <p className="text-gray-400 text-xs mb-3">The description will be included on the item&apos;s detail page underneath its image. Markdown syntax is supported.</p>
                             <textarea
                                 name="description"
                                 placeholder="Provide a detailed description of your item."

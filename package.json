@@ -1,7 +1,23 @@
 {
   "name": "artifynft",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "A modern, high-performance NFT marketplace template built with Next.js 15, React 19, and Tailwind CSS",
+  "keywords": [
+    "nft",
+    "marketplace",
+    "nextjs",
+    "next.js",
+    "template",
+    "web3",
+    "blockchain",
+    "crypto",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "ethereum"
+  ],
+  "author": "ArtifyNFT",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

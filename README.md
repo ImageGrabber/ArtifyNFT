@@ -1,6 +1,8 @@
-# ArtifyNFT - Premier NFT Marketplace
+# ArtifyNFT - Premier NFT Marketplace Template
 
-A modern, responsive NFT marketplace built with Next.js 15, React 19, and Tailwind CSS. ArtifyNFT provides a complete platform for artists and collectors to discover, create, and trade unique digital artworks on the blockchain.
+A modern, responsive NFT marketplace **template** built with Next.js 15, React 19, and Tailwind CSS. ArtifyNFT provides a complete frontend UI for artists and collectors to discover, create, and trade unique digital artworks.
+
+> **⚠️ Important:** This is a frontend template with demo data. Web3 wallet integration and blockchain functionality are not included and need to be implemented separately based on your requirements.
 
 ## 📸 Screenshots
 
@@ -35,10 +37,10 @@ A modern, responsive NFT marketplace built with Next.js 15, React 19, and Tailwi
 ## 🚀 Features
 
 ### Core Functionality
-- **NFT Marketplace**: Browse, buy, and sell digital artworks
+- **NFT Marketplace UI**: Browse and display digital artworks (UI only)
 - **Artist Profiles**: Showcase top artists and their collections
-- **Wallet Integration**: Connect with MetaMask and other Web3 wallets
-- **Real-time Bidding**: Live auction system with countdown timers
+- **Wallet Connection UI**: Interface for connecting Web3 wallets (UI only - integration needed)
+- **Bidding Interface**: UI for auction system with countdown timers (UI only)
 - **Category Browsing**: Organized NFT categories (Art, Music, Utility)
 
 ### User Experience
@@ -68,10 +70,10 @@ A modern, responsive NFT marketplace built with Next.js 15, React 19, and Tailwi
 - **PostCSS**: CSS processing
 - **Node.js**: JavaScript runtime
 
-### External Services
-- **Stockcake Images**: High-quality stock photography
-- **Pexels**: Additional image resources
-- **RandomUser.me**: Avatar generation for demo purposes
+### External Services (Demo Only)
+- **Stockcake Images**: High-quality stock photography (for demo - replace with your own)
+- **Pexels**: Additional image resources (for demo - replace with your own)
+- **RandomUser.me**: Avatar generation for demo purposes (replace with your own)
 
 ## 📦 Installation
 
@@ -81,11 +83,7 @@ A modern, responsive NFT marketplace built with Next.js 15, React 19, and Tailwi
 
 ### Setup Instructions
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd artifynft
-   ```
+1. **Extract the template files** to your desired location
 
 2. **Install dependencies**
    ```bash
@@ -260,13 +258,44 @@ External image domains are configured for:
 ### Tailwind CSS
 Custom animations and utilities are defined in the global CSS file.
 
-## 🤝 Contributing
+## ⚠️ Template Features vs Production Requirements
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+### ✅ What's Included (Frontend Template)
+- Complete UI/UX for all pages
+- Responsive design (mobile, tablet, desktop)
+- Mock data structure ready for API integration
+- Fully customizable theme and styling
+- All components and layouts
+- TypeScript types and interfaces
+
+### ❌ What's NOT Included (Needs Implementation)
+- **Web3 Wallet Integration**: Connect with libraries like ethers.js, web3.js, or wagmi
+- **Blockchain Integration**: Smart contract interactions need to be added
+- **Backend API**: Data persistence and server-side logic
+- **Payment Processing**: Transaction handling and payment gateways
+- **Image Storage**: Replace demo images with your own storage solution
+- **Authentication**: User authentication system
+- **Database**: Data storage and management
+
+### 🔧 Implementation Guide
+To make this template production-ready, you'll need to:
+
+1. **Install Web3 libraries**:
+   ```bash
+   npm install ethers  # or web3, wagmi, etc.
+   ```
+
+2. **Implement wallet connection** in `src/app/wallet/page.tsx`
+
+3. **Connect to your smart contracts** or backend API
+
+4. **Replace demo images** in `src/data/` with your own assets
+
+5. **Set up environment variables** for API endpoints, contract addresses, etc.
+
+6. **Implement backend** for data persistence (if needed)
+
+For detailed customization instructions, see [DOCUMENTATION.md](./DOCUMENTATION.md)
 
 ## 📄 License
 
@@ -283,9 +312,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 For support and questions:
-- Create an issue in the repository
-- Contact the development team
-- Check the documentation
+- Check the [DOCUMENTATION.md](./DOCUMENTATION.md) for customization guides
+- Review the code comments for implementation hints
+- Refer to Next.js and React documentation for framework-specific questions
 
 ---
 

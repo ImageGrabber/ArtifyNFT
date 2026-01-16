@@ -1,15 +1,23 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  
+  --font-playfair: var(--font-playfair);
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  
+  /* Template Colors - Easily Customizable */
+  --primary: #a259ff;
+  --primary-foreground: #ffffff;
+  --secondary: #231942;
+  --accent: #7c3aed;
 }
 
 @media (prefers-color-scheme: dark) {
